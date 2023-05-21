@@ -1,9 +1,1 @@
-function Course() {
-    return (
-        <>
-            <h1>Course page</h1>
-        </>
-    );
-}
-
-export default Course;
+export { default } from './Course';

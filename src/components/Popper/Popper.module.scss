@@ -1,0 +1,12 @@
+.wrapper {
+    width: 100%;
+    min-height: 100px;
+    padding: 12px 0;
+    max-height: calc(90vh - 66px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    border-radius: 10px;
+    background: var(--white-color);
+    box-shadow: 0 -4px 32px rgba(0, 0, 0, 0.2);
+    color: #1d2129;
+}
