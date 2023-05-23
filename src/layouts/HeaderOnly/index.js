@@ -1,5 +1,4 @@
 import Header from '~/layouts/components/Header/index';
-
 function HeaderOnly({ children }) {
     return (
         <div>

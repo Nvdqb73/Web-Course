@@ -57,6 +57,9 @@ input,
 a {
     color: var(--text-color);
     text-decoration: none;
+    &:hover {
+        color: var(--black);
+    }
 }
 
 ul {
