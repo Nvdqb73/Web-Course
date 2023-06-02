@@ -1,11 +1,25 @@
 .navbar {
     height: 66px;
+    background-color: var(--dark-blue);
+    border-bottom: 2px solid var(--blue);
 }
 
 .heading {
-    font-size: 2.5rem;
+    color: var(--white) !important;
+    font-size: 2.5rem !important;
+    font-weight: 400;
 }
 
 .me-auto {
     font-size: 2rem;
+}
+
+.navbar-collapse {
+    flex-direction: row-reverse;
+
+    .me-3 {
+        font-size: 1.7rem;
+        width: 300px;
+        margin-right: 8px;
+    }
 }

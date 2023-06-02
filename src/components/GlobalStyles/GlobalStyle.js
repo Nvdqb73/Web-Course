@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+
 import './GlobalStyle.scss';
 
 function GlobalStyles({ children }) {

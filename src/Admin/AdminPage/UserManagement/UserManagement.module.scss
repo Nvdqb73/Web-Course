@@ -1,0 +1,24 @@
+.list-user {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    padding: 20px 0;
+
+    span {
+        border-bottom: 2px solid var(--blue);
+    }
+}
+
+.table-user {
+    text-align: center;
+}
+
+.btn-action {
+    display: flex;
+    flex-direction: column;
+
+    Button {
+        margin-top: 20px;
+    }
+}

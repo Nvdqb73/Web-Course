@@ -10,18 +10,28 @@ export const course = async () => {
     }
 };
 
-export const createCourse = async (tenKH, hinh, moTa, soLuongBH, soLuongHocVien, gia, maLoai, maGV, maQTV) => {
+export const createCourse = async (
+    name,
+    image,
+    describe,
+    quantityLesson,
+    quantityStudent,
+    price,
+    typeCode,
+    instructorCode,
+    adminCode,
+) => {
     try {
         const res = await httpRequest.post('KhoaHocs', {
-            tenKH,
-            hinh,
-            moTa,
-            soLuongBH,
-            soLuongHocVien,
-            gia,
-            maLoai,
-            maGV,
-            maQTV,
+            tenKH: name,
+            hinh: image,
+            moTa: describe,
+            soLuongBH: quantityLesson,
+            soLuongHocVien: quantityStudent,
+            gia: price,
+            maLoai: typeCode,
+            maGV: instructorCode,
+            maQTV: adminCode,
         });
         return res;
     } catch (error) {
@@ -29,18 +39,29 @@ export const createCourse = async (tenKH, hinh, moTa, soLuongBH, soLuongHocVien,
     }
 };
 
-export const updateCourse = async (id, tenKH, hinh, moTa, soLuongBH, soLuongHocVien, gia, maLoai, maGV, maQTV) => {
+export const updateCourse = async (
+    id,
+    name,
+    image,
+    describe,
+    quantityLesson,
+    quantityStudent,
+    price,
+    typeCode,
+    instructorCode,
+    adminCode,
+) => {
     try {
         const res = await httpRequest.put(`KhoaHocs/${id}`, {
-            tenKH,
-            hinh,
-            moTa,
-            soLuongBH,
-            soLuongHocVien,
-            gia,
-            maLoai,
-            maGV,
-            maQTV,
+            tenKH: name,
+            hinh: image,
+            moTa: describe,
+            soLuongBH: quantityLesson,
+            soLuongHocVien: quantityStudent,
+            gia: price,
+            maLoai: typeCode,
+            maGV: instructorCode,
+            maQTV: adminCode,
         });
         return res;
     } catch (error) {

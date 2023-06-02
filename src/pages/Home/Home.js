@@ -6,9 +6,6 @@ const cx = classNames.bind(styles);
 function Home() {
     return (
         <div className={cx('Wrapper')}>
-            <div className={cx('Banner')}>
-                <h2> Banner</h2>
-            </div>
             <div className={cx('Course')}>
                 <Courses title="Khóa học miễn phí" />
             </div>

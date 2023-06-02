@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
 
+import { ModalDeleteRole } from '~/Admin/components/ModalsRole';
 import styles from './RoleManagerment.module.scss';
 
 //Service
@@ -12,6 +13,8 @@ import * as RoleServices from '~/services/RoleServices';
 const cx = classNames.bind(styles);
 
 function RoleManagement() {
+    const [isShowModalDelete, setIsShowModalDelete] = useState(false);
+    const [dataRoleDelete, setDataRoleDelete] = useState({});
     const [roles, setRoles] = useState([]);
 
     const navigate = useNavigate();
@@ -31,23 +34,30 @@ function RoleManagement() {
         navigate('/admin/@_type=role/addRole');
     };
 
-    const handleEdit = (id) => {};
+    const handleEdit = (role) => {
+        navigate(`/admin/@_type=role/editRole`, { state: { role: role } });
+    };
 
-    const handleDelete = (id) => {};
+    const handleClose = () => {
+        setIsShowModalDelete(false);
+    };
+
+    const handleDelete = (role) => {
+        setIsShowModalDelete(true);
+        setDataRoleDelete(role);
+    };
 
     return (
         <div>
-            <div className={cx('list-course')}>
-                <span>Danh sách Role</span>
-                <Button className={cx('btn-add')} variant="success" size="lg" onClick={handleAddRole}>
-                    Thêm Role
-                </Button>
+            <div className={cx('list-role')}>
+                <span>Danh Sách Role</span>
             </div>
-            <Table striped bordered hover>
+            <Table striped bordered hover variant="dark" responsive="sm" className={cx('table-role')}>
                 <thead>
                     <tr>
-                        <th>roleId</th>
-                        <th>roleName</th>
+                        <th>Mã Role</th>
+                        <th>Tên Role</th>
+                        <th>Chức Năng</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -56,11 +66,11 @@ function RoleManagement() {
                             <td>{role.roleId}</td>
                             <td>{role.roleName}</td>
 
-                            <td>
-                                <Button variant="outline-info" size="lg" onClick={handleEdit(role.roleId)}>
+                            <td className={cx('btn-action')}>
+                                <Button variant="outline-info" size="lg" onClick={() => handleEdit(role)}>
                                     Edit
                                 </Button>
-                                <Button variant="outline-danger" size="lg" onClick={handleDelete(role.roleId)}>
+                                <Button variant="outline-danger" size="lg" onClick={() => handleDelete(role)}>
                                     Delete
                                 </Button>
                             </td>
@@ -68,6 +78,19 @@ function RoleManagement() {
                     ))}
                 </tbody>
             </Table>
+
+            <div className="d-grid gap-1 col-3 mx-auto">
+                <Button className={cx('btn-add')} variant="success" size="lg" onClick={handleAddRole}>
+                    Thêm Role
+                </Button>
+            </div>
+
+            <ModalDeleteRole
+                show={isShowModalDelete}
+                handleClose={handleClose}
+                dataRoleDelete={dataRoleDelete}
+                setRole={setRoles}
+            />
         </div>
     );
 }

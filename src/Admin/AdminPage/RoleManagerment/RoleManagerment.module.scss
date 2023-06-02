@@ -1,11 +1,24 @@
-.list-course {
+.list-role {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    font-size: 2rem;
-    padding: 8px 0;
+    justify-content: center;
+    font-size: 3rem;
+    padding: 20px 0;
+
+    span {
+        border-bottom: 2px solid var(--blue);
+    }
 }
 
-.btn-add {
-    font-size: 1.6rem !important;
+.table-role {
+    text-align: center;
+}
+
+.btn-action {
+    display: flex !important;
+    justify-content: center;
+
+    Button {
+        margin-left: 8px !important;
+    }
 }

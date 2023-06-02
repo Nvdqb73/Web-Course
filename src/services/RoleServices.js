@@ -20,3 +20,24 @@ export const createRole = async (roleName) => {
         console.log(error);
     }
 };
+
+export const updateRole = async (roleId, roleName) => {
+    try {
+        const res = await httpRequest.put(`Roles/${roleId}`, {
+            roleName,
+        });
+
+        return res;
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+export const deleteRole = async (id) => {
+    try {
+        const res = await httpRequest.deleteRequest(`Roles/${id}`);
+        return res;
+    } catch (error) {
+        console.log(error);
+    }
+};

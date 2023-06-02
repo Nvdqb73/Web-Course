@@ -1,8 +1,10 @@
 const {
-    //Course
+    //Common
     SET_ID,
     SET_NAME,
     SET_IMAGE,
+    ALL_RESET,
+    //Course
     SET_DESCRIBE,
     SET_QUANTITY_LESSON,
     SET_QUANTITY_STUDENT,
@@ -10,14 +12,27 @@ const {
     SET_TYPE,
     SET_LECTURER,
     SET_ADMIN,
-    ADD_COURSE,
-    ALL_RESET,
-
-    //Role
-    ROLE_NAME,
+    //User
+    SET_USER_NAME,
+    SET_PASSWORD,
+    SET_EMAIL,
+    SET_ROLEID,
+    //Lecturer
+    SET_DATE,
+    SET_PROFESSIONAL,
+    SET_YEAR,
+    SET_ADDRESS,
+    //Lesson
+    SET_CONTENT,
+    SET_VIDEO,
+    SET_COURSECODE,
+    //Assignments
+    SET_ANSWER,
+    SET_POINT,
+    SET_LESSONCODE,
 } = require('./constants');
 
-//Course
+//Common
 
 const setId = (payload) => {
     return {
@@ -39,6 +54,15 @@ const setImage = (payload) => {
         payload,
     };
 };
+
+const reset = (payload) => {
+    return {
+        type: ALL_RESET,
+        payload,
+    };
+};
+
+//Course
 
 const setDescribe = (payload) => {
     return {
@@ -89,32 +113,112 @@ const setAdmin = (payload) => {
     };
 };
 
-const setCourse = (payload) => {
+//User
+const setUserName = (payload) => {
     return {
-        type: ADD_COURSE,
+        type: SET_USER_NAME,
         payload,
     };
 };
 
-const reset = (payload) => {
+const setPassword = (payload) => {
     return {
-        type: ALL_RESET,
+        type: SET_PASSWORD,
         payload,
     };
 };
 
-//Role
-const setRole = (payload) => {
+const setEmail = (payload) => {
     return {
-        type: ROLE_NAME,
+        type: SET_EMAIL,
+        payload,
+    };
+};
+
+const setRoleid = (payload) => {
+    return {
+        type: SET_ROLEID,
+        payload,
+    };
+};
+
+//Lecturer
+const setDate = (payload) => {
+    return {
+        type: SET_DATE,
+        payload,
+    };
+};
+
+const setProfessional = (payload) => {
+    return {
+        type: SET_PROFESSIONAL,
+        payload,
+    };
+};
+
+const setYear = (payload) => {
+    return {
+        type: SET_YEAR,
+        payload,
+    };
+};
+
+const setAddress = (payload) => {
+    return {
+        type: SET_ADDRESS,
+        payload,
+    };
+};
+
+const setContent = (payload) => {
+    return {
+        type: SET_CONTENT,
+        payload,
+    };
+};
+
+const setVideo = (payload) => {
+    return {
+        type: SET_VIDEO,
+        payload,
+    };
+};
+
+const setCourseCode = (payload) => {
+    return {
+        type: SET_COURSECODE,
+        payload,
+    };
+};
+
+//Assignments
+const setAnswer = (payload) => {
+    return {
+        type: SET_ANSWER,
+        payload,
+    };
+};
+
+const setPoint = (payload) => {
+    return {
+        type: SET_POINT,
+        payload,
+    };
+};
+
+const setLessonCode = (payload) => {
+    return {
+        type: SET_LESSONCODE,
         payload,
     };
 };
 export {
-    //Course
+    //Common
     setId,
     setName,
     setImage,
+    //Course
     setDescribe,
     setQuantityLesson,
     setQuantityStudent,
@@ -122,9 +226,23 @@ export {
     setType,
     setLecturer,
     setAdmin,
-    setCourse,
     reset,
-
-    //Role
-    setRole,
+    //User
+    setUserName,
+    setPassword,
+    setEmail,
+    setRoleid,
+    //Lecturer
+    setDate,
+    setProfessional,
+    setYear,
+    setAddress,
+    //Lesson
+    setContent,
+    setVideo,
+    setCourseCode,
+    //Assignments
+    setAnswer,
+    setPoint,
+    setLessonCode,
 };

@@ -1,0 +1,24 @@
+.list-assignments {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    padding: 20px 0;
+
+    span {
+        border-bottom: 2px solid var(--blue);
+    }
+}
+
+.table-assignments {
+    text-align: center;
+}
+
+.btn-action {
+    display: flex !important;
+    justify-content: center;
+
+    Button {
+        margin-left: 8px !important;
+    }
+}

@@ -2,7 +2,7 @@ import classNames from 'classnames/bind';
 import Tippy from '@tippyjs/react';
 import { Link } from 'react-router-dom';
 
-import { IconBrand4chan, IconBellFilled } from '@tabler/icons-react';
+import { IconBat, IconBellFilled } from '@tabler/icons-react';
 import { IconUser, IconSettings, IconArrowBarRight } from '@tabler/icons-react';
 import 'tippy.js/dist/tippy.css';
 
@@ -42,7 +42,7 @@ function Header() {
             <div className={cx('inner')}>
                 <div className={cx('logo')}>
                     <Link to={config.routes.home} className={cx('log-link')}>
-                        <IconBrand4chan size={50} color="#f15122" stroke={2} />
+                        <IconBat size={50} color="#333" stroke={2} />
                     </Link>
                     <span className={cx('title')}>Khóa học trực tuyến</span>
                 </div>
