@@ -1,0 +1,31 @@
+.heading-wrapper {
+    margin: 18px 0;
+
+    h1 {
+        color: #242424;
+        font-size: 2.8rem;
+        font-weight: 900;
+    }
+}
+
+.container {
+    padding: 0;
+}
+
+.content_top {
+    p {
+        margin: 6px 0;
+        font-size: 1.8rem;
+        line-height: var(--line-height);
+        max-width: 840px;
+        font-weight: 300;
+    }
+}
+
+.content_body {
+    p {
+        font-size: 1.6rem;
+        line-height: var(--line-height);
+        margin: 0;
+    }
+}

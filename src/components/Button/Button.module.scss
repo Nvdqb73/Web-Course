@@ -39,6 +39,7 @@
     border-color: var(--primary);
 
     &:hover {
+        color: var(--white);
         border-color: var(--primary);
         background: linear-gradient(0deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.06)), #fe2c55;
     }
@@ -79,5 +80,5 @@
 
 .large {
     min-width: 160px;
-    padding: 7px 18px;
+    padding: 12px 18px;
 }

@@ -6,10 +6,11 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-import * as searchServices from '~/services/searchServices';
 import styles from './Courses.module.scss';
 import CourseItem from './CourseItem';
 import Button from '../Button/Button';
+
+import * as courseServices from '~/services/courseServices';
 
 const cx = classNames.bind(styles);
 
@@ -18,7 +19,7 @@ function Courses({ title }) {
 
     useEffect(() => {
         const fetchApi = async () => {
-            const result = await searchServices.search('hoa');
+            const result = await courseServices.course();
             setCourses(result);
         };
 
@@ -29,7 +30,7 @@ function Courses({ title }) {
         <div className={cx('wrapper')}>
             <div className={cx('heading-wrap')}>
                 <h2 className={cx('title')}>{title}</h2>
-                <Button href="course">
+                <Button href="/learning">
                     <span>Xem lộ trình</span>
                     <IconArrowBadgeRight size={20} color="#333" />
                 </Button>

@@ -5,7 +5,7 @@ import Courses from '~/components/Courses';
 const cx = classNames.bind(styles);
 function Home() {
     return (
-        <div className={cx('Wrapper')}>
+        <div className={cx('wrapper')}>
             <div className={cx('Course')}>
                 <Courses title="Khóa học miễn phí" />
             </div>

@@ -15,7 +15,7 @@ function CourseItem({ data }) {
                 className={cx('avatar')}
                 to={`/${data.nickname}`}
                 style={{
-                    backgroundImage: `url("${data.avatar}")`,
+                    backgroundImage: `url("${data.hinh}")`,
                     backgroundRepeat: 'no-repeat',
                     backgroundPosition: '50%',
                     backgroundSize: 'cover',
@@ -34,12 +34,12 @@ function CourseItem({ data }) {
             </Link>
             <h3 className={cx('course-name')}>
                 <Button className={cx('link-name')} href="hadfas">
-                    {data.nickname}
+                    {data.tenKH}
                 </Button>
             </h3>
             <div className={cx('students-count')}>
                 <IconUsersGroup size={15} color="#333" stroke={4} />
-                <span className={cx('quantity')}>106.828</span>
+                <span className={cx('quantity')}>{data.soLuongHocVien}</span>
             </div>
         </div>
     );
