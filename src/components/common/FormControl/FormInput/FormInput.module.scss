@@ -1,0 +1,52 @@
+.wrapper {
+    color: #292929;
+    text-align: left;
+    width: 100%;
+}
+
+.labelGroup {
+    display: flex;
+    justify-content: space-between;
+}
+
+.labelStyle {
+    display: none !important;
+}
+
+.labelComeback {
+    display: none !important;
+}
+
+.label {
+    display: block;
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin: 10px 0 10px 8px;
+}
+
+.right {
+    cursor: pointer;
+
+    &:hover {
+        color: var(--primary);
+    }
+}
+
+.inputWrap {
+    background: rgba(22, 24, 35, 0.06);
+    border: 1px solid rgba(22, 24, 35, 0.06);
+    border-radius: 44px;
+    display: flex;
+    height: 44px;
+    overflow: hidden;
+
+    input {
+        background-color: transparent;
+        border: none;
+        display: block;
+        flex: 1 1;
+        font-size: 1.6rem;
+        outline: none;
+        padding: 12px 20px;
+    }
+}

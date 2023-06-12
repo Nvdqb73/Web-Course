@@ -1,3 +1,15 @@
 .wrapper {
     margin: 0 0 0 96px;
+    display: flex;
+    flex-direction: column;
+}
+
+.slideshow-wrapper {
+    padding-bottom: 52px;
+    margin-left: 52px;
+    max-width: 1920px;
+}
+.slideshow {
+    margin-top: 18px;
+    width: 1116px;
 }

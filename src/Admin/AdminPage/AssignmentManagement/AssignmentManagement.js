@@ -50,7 +50,7 @@ function AssignmentManagement() {
     return (
         <div>
             <div className={cx('list-assignments')}>
-                <span>Danh Sách Bài Học</span>
+                <span>Danh Sách Bài Tập</span>
             </div>
             <Table striped bordered hover variant="dark" responsive="sm" className={cx('table-assignments')}>
                 <thead>

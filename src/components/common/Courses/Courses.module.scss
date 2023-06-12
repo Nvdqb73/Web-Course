@@ -1,0 +1,66 @@
+.heading-wrap {
+    display: flex;
+    justify-content: space-between;
+    margin: 4px 26px;
+}
+
+.title {
+    font-weight: 600;
+    font-size: 24px;
+}
+
+//Course item
+.course-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.avatar {
+    width: 300px;
+    height: 200px;
+    border-radius: 6px;
+    object-fit: cover;
+    position: relative;
+
+    &:hover .btn-course {
+        display: flex;
+        width: 150px;
+        margin: auto;
+        margin-top: 20%;
+    }
+    &:hover::after {
+        opacity: 1;
+        visibility: visible;
+    }
+    &::after {
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 16px;
+        content: '';
+        inset: 0;
+        opacity: 0;
+        position: absolute;
+        transition: all 0.3s ease 0s;
+        visibility: hidden;
+    }
+}
+
+.link-name {
+    padding: 12px 0 8px 0;
+    font-size: 1.6rem;
+}
+
+.students-count {
+    display: flex;
+    align-items: center;
+    padding-bottom: 30px;
+}
+
+.quantity {
+    margin-left: 4px;
+}
+
+.btn-course {
+    position: relative;
+    z-index: 2;
+    display: none;
+}

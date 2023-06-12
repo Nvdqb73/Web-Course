@@ -1,9 +1,8 @@
 import * as httpRequest from '~/utils/httpRequest';
+
 export const admin = async () => {
     try {
-        const res = await httpRequest.get('QuanTriViens', {
-            params: {},
-        });
+        const res = await httpRequest.get('QuanTriViens');
         return res;
     } catch (error) {
         console.log(error);

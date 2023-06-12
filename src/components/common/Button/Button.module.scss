@@ -1,0 +1,108 @@
+.wrapper {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.4rem;
+    padding: 9px 18px;
+    border-radius: 20px;
+    background-color: var(--white);
+    border: 2px solid transparent;
+    user-select: none;
+
+    + .wrapper {
+        margin-left: 8px;
+    }
+
+    &.disabled {
+        cursor: not-allowed;
+        opacity: 0.5;
+    }
+}
+
+//Button type
+.rounded {
+    border-radius: 999px;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 6%);
+    border-color: rgba(22, 24, 35, 0.12);
+
+    &:hover {
+        border-color: rgba(22, 24, 35, 0.2);
+        background-color: rgba(22, 24, 35, 0.03);
+    }
+}
+
+.primary {
+    color: var(--white);
+    background-color: var(--primary);
+    border-color: var(--primary);
+
+    &:hover {
+        color: var(--white);
+        border-color: var(--primary);
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.06)), #fe2c55;
+    }
+}
+
+.lightBlue {
+    background-position: 0 0;
+    background-size: 100% 200%;
+    border: 0;
+    color: var(--white);
+    font-weight: 600;
+    transition: background-position 0.15s cubic-bezier(0.2, 0.2, 0.2, 1);
+    background-color: #1dbfaf;
+    background-image: linear-gradient(70.06deg, #2cccff -5%, #22dfbf 106%);
+
+    &:hover {
+        opacity: 0.7;
+    }
+
+    span {
+        font-size: 1.8rem;
+    }
+}
+
+.outline {
+    color: var(--black);
+    border-color: currentColor;
+    transition: 0.2s ease;
+
+    &:hover {
+        color: var(--white);
+        background-color: var(--black);
+        border: 2px solid transparent;
+    }
+}
+
+.icon + .title,
+.title + .icon {
+    margin-left: 8px;
+}
+
+.title {
+    display: flex;
+}
+
+.icon {
+    display: inline-block;
+    width: 24px;
+    text-align: center;
+}
+
+// Button size
+.small {
+    min-width: 120px;
+    padding: 7px 16px;
+}
+
+.medium {
+    min-width: 160px;
+    padding: 10px 26px;
+}
+
+.large {
+    min-width: 180px;
+    padding: 12px 18px;
+}

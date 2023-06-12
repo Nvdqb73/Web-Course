@@ -1,16 +1,28 @@
 import config from '~/config';
 
 //Layout
-import { HeaderOnly } from '~/layouts';
+
+import { LessonLayout } from '~/layouts';
 
 import { Admin } from '~/Admin/AdminLayouts';
+
+//Error 404
+import Error from '~/pages/Error';
+
+//Login
+import Login from '~/pages/Login';
+
+//Register
+import Register from '~/pages/Register';
 
 //Pages Client
 import Home from '~/pages/Home';
 import Course from '~/pages/Course';
+import { Detail } from '~/pages/Course';
 import Learning from '~/pages/Learning';
 import Personal from '~/pages/Personal';
 import Lesson from '~/pages/Lesson';
+
 //Page Admin
 import { HomeAdmin } from '~/Admin/AdminPage';
 import { CourseTypeManagement } from '~/Admin/AdminPage';
@@ -40,11 +52,22 @@ import { ModalEditAssignment } from '~/Admin/components/ModalAssignment';
 
 //pubic routes
 const publicRoutes = [
+    { path: config.routes.error404, component: Error, layout: null },
+
+    //Login
+    { path: config.routes.login, component: Login, layout: null },
+
+    //Register
+    { path: config.routes.register, component: Register, layout: null },
     //routes Client
     { path: config.routes.home, component: Home },
     { path: config.routes.course, component: Course },
+    { path: config.routes.course_details, component: Detail },
     { path: config.routes.learning, component: Learning },
-    { path: config.routes.lesson, component: Lesson, layout: HeaderOnly },
+
+    { path: config.routes.lesson, component: Lesson, layout: LessonLayout },
+    { path: config.routes.lessonItem, component: Lesson, layout: LessonLayout },
+
     { path: config.routes.profile, component: Personal, layout: null },
 
     //routes Admin
@@ -73,8 +96,6 @@ const publicRoutes = [
     { path: config.routes.tableAssignments, component: AssignmentManagement, layout: Admin },
     { path: config.routes.addAssignments, component: ModalAddAssignment, layout: Admin },
     { path: config.routes.editAssignments, component: ModalEditAssignment, layout: Admin },
-
-    // { path: '/:nickname', component: Course },
 ];
 
 //private routes

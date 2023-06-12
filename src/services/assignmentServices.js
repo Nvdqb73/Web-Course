@@ -1,9 +1,8 @@
 import * as httpRequest from '~/utils/httpRequest';
+
 export const assignment = async () => {
     try {
-        const res = await httpRequest.get('BaiTaps', {
-            params: {},
-        });
+        const res = await httpRequest.get('BaiTaps');
         return res;
     } catch (error) {
         console.log(error);

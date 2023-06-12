@@ -1,7 +1,16 @@
 import * as httpRequest from '~/utils/httpRequest';
 export const lesson = async () => {
     try {
-        const res = await httpRequest.get('BaiHocs', {
+        const res = await httpRequest.get('BaiHocs');
+        return res;
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+export const lessonById = async (id) => {
+    try {
+        const res = await httpRequest.get(`BaiHocs/${id}`, {
             params: {},
         });
         return res;

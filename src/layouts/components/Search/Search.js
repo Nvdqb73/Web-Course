@@ -2,9 +2,10 @@ import { useState, useEffect, useRef } from 'react';
 import classNames from 'classnames/bind';
 import HeadlessTippy from '@tippyjs/react/headless';
 import { IconSearch, IconCircleX, IconLoader } from '@tabler/icons-react';
+
 import * as searchServices from '~/services/searchServices';
-import { Wrapper as PopperWrapper } from '~/components/Popper';
-import SearchCourseItem from '~/components/SearchCourseItem';
+import { Wrapper as PopperWrapper } from '~/components/common/Popper';
+import SearchCourseItem from '~/components/feature/SearchCourseItem';
 import styles from './Search.module.scss';
 import { useDebounce } from '~/hooks';
 
@@ -57,8 +58,6 @@ function Search() {
     };
 
     return (
-        //ing a wrapper <div> tag around the reference element solves
-        //this by creating a new parentNode context.
         <div>
             <HeadlessTippy
                 interactive
@@ -68,7 +67,12 @@ function Search() {
                         <PopperWrapper>
                             <h4 className={cx('search-title')}>KHÓA HỌC</h4>
                             {searchResult.map((result) => (
-                                <SearchCourseItem key={result.id} data={result} />
+                                <SearchCourseItem
+                                    key={result.maKH}
+                                    data={result}
+                                    setSearchResult={setSearchResult}
+                                    setSearchValue={setSearchValue}
+                                />
                             ))}
                         </PopperWrapper>
                     </div>

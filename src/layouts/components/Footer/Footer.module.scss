@@ -1,0 +1,98 @@
+.wrapper {
+    width: 100%;
+    background-color: var(--black);
+    color: #a9b3bb;
+    overflow: hidden;
+    padding: 68px 0 40px;
+    position: relative;
+}
+
+.column-top {
+    align-items: center;
+    display: flex;
+}
+
+.top-slogan {
+    color: var(--white);
+    margin-left: 10px;
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.contact-list {
+    color: #a9b3bb;
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+    position: relative;
+    text-align: initial;
+    padding: 12px;
+
+    a {
+        color: #a9b3bb;
+    }
+
+    &:hover a {
+        opacity: 0.8;
+        color: #a9b3bb;
+    }
+}
+
+//Column 2
+.heading {
+    color: var(--white);
+    font-size: 1.8rem;
+    line-height: 1.6;
+    margin-top: 10px;
+    text-transform: uppercase;
+}
+
+.list-1 {
+    color: #a9b3bb;
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+    position: relative;
+    text-align: initial;
+    padding: 12px 75px;
+
+    a {
+        color: #a9b3bb;
+    }
+
+    &:hover a {
+        color: #a9b3bb;
+    }
+}
+
+.list-2 {
+    color: #a9b3bb;
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+    position: relative;
+    text-align: initial;
+    padding: 12px 81px;
+
+    a {
+        color: #a9b3bb;
+    }
+
+    &:hover a {
+        color: #a9b3bb;
+    }
+}
+
+.list-3 {
+    color: #a9b3bb;
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+    position: relative;
+    text-align: initial;
+    padding: 12px 30px;
+
+    a {
+        color: #a9b3bb;
+    }
+
+    &:hover a {
+        color: #a9b3bb;
+    }
+}

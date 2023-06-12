@@ -1,9 +1,7 @@
 import * as httpRequest from '~/utils/httpRequest';
 export const role = async () => {
     try {
-        const res = await httpRequest.get('Roles', {
-            params: {},
-        });
+        const res = await httpRequest.get('Roles');
         return res;
     } catch (error) {
         console.log(error);

@@ -1,0 +1,181 @@
+.wrapper {
+    align-items: center;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.hasBg::before {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+        url(https://accounts.fullstack.edu.vn/static/media/f8_bg_auth_1366.cb1a38f30212c78aa891.png);
+    background-size: cover;
+    bottom: -5px;
+    content: '';
+    -webkit-filter: blur(0);
+    filter: blur(0);
+    left: -5px;
+    position: absolute;
+    right: -5px;
+    top: -5px;
+    z-index: -1;
+}
+
+.container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    text-align: center;
+    z-index: 2;
+}
+
+.content {
+    --width: 640px;
+    background: #fff;
+    border-radius: 8px;
+    max-width: calc(100vw - 32px);
+    min-height: 600px;
+    padding: 48px 16px;
+    position: relative;
+    width: var(--width);
+}
+
+//header
+.header {
+    overflow: hidden;
+}
+
+.logo {
+    border-radius: 8px;
+    height: 44px;
+    object-fit: cover;
+    width: 44px;
+}
+
+.title {
+    color: #292929;
+    font-size: 2.8rem;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+//body
+.body {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 8px;
+}
+
+.mainStep {
+    margin-top: 24px;
+}
+
+.dontHaveAcc {
+    font-size: 1.6rem;
+    line-height: 1.8;
+    margin-bottom: 0;
+    padding: 24px 16px 0;
+
+    a {
+        margin-left: 4px;
+        color: var(--primary);
+        font-weight: 600;
+    }
+}
+
+//formBody
+.formBody {
+    max-width: 100%;
+    width: 380px;
+
+    .btnSubmit {
+        border-radius: 44px !important;
+        height: 44px;
+        margin-top: 20px;
+        width: 100%;
+        background-position: 0 0;
+        background-size: 100% 200%;
+        border: 0;
+        color: var(--white);
+        font-weight: 600;
+        transition: background-position 0.15s cubic-bezier(0.2, 0.2, 0.2, 1);
+        background-color: #1dbfaf;
+        background-image: linear-gradient(70.06deg, #2cccff -5%, #22dfbf 106%);
+
+        &:hover {
+            opacity: 0.9;
+        }
+
+        span {
+            font-size: 1.8rem;
+        }
+    }
+
+    .btnDisabled {
+        border-radius: 44px !important;
+        height: 44px;
+        margin-top: 20px;
+        width: 100%;
+        background-position: 0 0;
+        background-size: 100% 200%;
+        border: 0;
+        color: var(--black);
+        font-weight: 600;
+        opacity: 0.6;
+        transition: background-position 0.15s cubic-bezier(0.2, 0.2, 0.2, 1);
+        background-color: #d9dddd;
+        background-image: linear-gradient(70.06deg, #aaacad -5%, #444645 106%);
+
+        span {
+            font-size: 1.8rem;
+        }
+    }
+}
+
+.inputPassword {
+    position: relative;
+
+    .icon {
+        cursor: pointer;
+        position: absolute;
+        right: 24px;
+        top: 12px;
+    }
+}
+
+//footer
+.footer {
+    bottom: 0;
+    color: #666;
+    font-size: 1.3rem;
+    left: 0;
+    line-height: 1.6;
+    padding: 12px 132px;
+    position: absolute;
+    right: 0;
+
+    a {
+        margin: 0 4px;
+        color: currentColor;
+        text-decoration: underline;
+    }
+}
+
+.displayNone {
+    display: none;
+}
+
+.forgotPassword {
+    cursor: pointer;
+    font-size: 1.6rem;
+    line-height: 1.8;
+    margin-top: 5px;
+    color: var(--primary);
+    font-weight: 600;
+}

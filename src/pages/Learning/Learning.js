@@ -1,9 +1,9 @@
 import classNames from 'classnames/bind';
 
 import styles from './Learning.module.scss';
-import Introduce from '~/components/Introduce';
-import LearningPathsList from '~/components/LearningPathsList';
-import SuggestionBox from '~/components/SuggestionBox';
+import Introduce from '~/components/common/Introduce';
+import LearningPathsList from '~/components/feature/LearningPathsList';
+import SuggestionBox from '~/components/common/SuggestionBox';
 
 const cx = classNames.bind(styles);
 
@@ -21,7 +21,13 @@ function Learning() {
 
             <div className={cx('container-body')}>
                 <LearningPathsList />
-                <SuggestionBox />
+                <SuggestionBox
+                    title="Tham gia cộng đồng học viên F8 trên Facebook"
+                    content="Hàng nghìn người khác đang học lộ trình giống như bạn. Hãy tham gia hỏi đáp, chia sẻ và hỗ trợ nhau trong quá trình học nhé."
+                    href="https://www.facebook.com/EmLaCuaAnh.1009"
+                    btn_content="Tham gia nhóm"
+                    target="_blank"
+                />
             </div>
         </div>
     );

@@ -1,0 +1,98 @@
+.subHeadWrapper {
+    display: flex;
+    font-size: 1.4rem;
+    margin-top: 4px;
+
+    ul {
+        display: flex;
+        justify-content: space-around;
+        margin: 0;
+        padding-left: 0;
+
+        li {
+            padding: 8px 0 12px 0;
+            font-size: 1.6rem;
+
+            strong {
+                margin-right: 4px;
+            }
+        }
+
+        .dot {
+            font-size: 3.4rem;
+            margin: -12px 4px;
+            opacity: 1;
+            padding: 0px 0px;
+        }
+    }
+}
+
+.numberFormat {
+    max-width: 55px !important;
+    margin-left: 4px;
+    font-weight: 600;
+}
+
+.headerBlock {
+    h2 {
+        margin: 16px 0;
+        font-size: 2rem;
+        font-weight: 700;
+    }
+}
+
+//lesson
+.curriculumPanel {
+    .panel {
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+        margin-bottom: 8px;
+    }
+}
+
+.collapse {
+    display: block;
+}
+
+.panelBody {
+    padding: 0;
+    background: #f5f5f5;
+    border: 1px solid #ebebeb;
+    border-radius: 6px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 147px;
+    cursor: default;
+    opacity: 0.7;
+}
+
+.lessonItem {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+    color: var(--black);
+    font-size: 1.6rem;
+    line-height: 48px;
+    overflow: hidden;
+    padding: 0 30px 0 48px;
+    position: relative;
+}
+
+.lessonItem:nth-child(2) {
+    flex-shrink: 0;
+    margin-left: 58px;
+    min-width: 69px;
+    text-align: right;
+}
+.floatLeft {
+    float: left;
+
+    .icon {
+        left: 26px;
+        position: absolute;
+        top: 16px;
+    }
+}
+
+.floatRight {
+    float: right;
+}

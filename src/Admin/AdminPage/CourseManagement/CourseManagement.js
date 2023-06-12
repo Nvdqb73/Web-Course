@@ -4,7 +4,7 @@ import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
 import { useNavigate } from 'react-router-dom';
 
-import Image from '~/components/Image';
+import Image from '~/components/common/Image';
 import { ModalDeleteCourse } from '~/Admin/components/ModalsCourse';
 import styles from './CourseManagement.module.scss';
 

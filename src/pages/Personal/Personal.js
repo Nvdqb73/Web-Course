@@ -1,7 +1,7 @@
 function Personal() {
     return (
         <>
-            <h2>Trang cá nhân</h2>
+            <h3>Trang cá nhân</h3>
         </>
     );
 }

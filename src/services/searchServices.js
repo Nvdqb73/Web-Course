@@ -1,15 +1,13 @@
-import * as httpRequest from '~/utils/Request';
+import * as httpRequest from '~/utils/httpRequest';
 
-export const search = async (q, type = 'less') => {
+export const search = async (query) => {
     try {
-        const res = await httpRequest.get('users/search', {
+        const res = await httpRequest.get('SearchKhoaHocs', {
             params: {
-                q,
-                type,
+                query,
             },
         });
-        console.log(res.data);
-        return res.data;
+        return res;
     } catch (error) {
         console.log(error);
     }

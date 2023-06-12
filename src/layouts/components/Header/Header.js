@@ -7,16 +7,16 @@ import { IconUser, IconSettings, IconArrowBarRight } from '@tabler/icons-react';
 import 'tippy.js/dist/tippy.css';
 
 import config from '~/config';
-import Button from '~/components/Button';
+import Button from '~/components/common/Button';
 import styles from './Header.module.scss';
-import Menu from '~/components/Popper/Menu';
-import Image from '~/components/Image';
+import Menu from '~/components/common/Popper/Menu';
+import Image from '~/components/common/Image';
 import Search from '../Search';
 
 const cx = classNames.bind(styles);
 
 function Header() {
-    const currentUser = true;
+    const currentUser = false;
 
     const userMenu = [
         {
@@ -72,7 +72,9 @@ function Header() {
                         </>
                     ) : (
                         <>
-                            <Button primary>Đăng Nhập</Button>
+                            <Button primary to="/login">
+                                Đăng Nhập
+                            </Button>
                         </>
                     )}
                 </div>

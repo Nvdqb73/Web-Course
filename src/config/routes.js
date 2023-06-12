@@ -1,11 +1,27 @@
 const admin = '/admin';
 
 const routes = {
+    //Not Found
+    error404: '*',
+
+    //Login
+    login: '/login',
+
+    //Register
+    register: '/register',
+
+    //Client
     home: '/',
     course: '/course',
+    course_details: '/course/:id',
     learning: '/learning',
+
     lesson: '/lesson',
+    lessonItem: '/lesson/:id',
+
     profile: '/personal',
+
+    //Admin
     admin: admin,
     tableCourseType: `${admin}/@_type=courseType`,
     addCourseType: `${admin}/@_type=courseType/addType`,

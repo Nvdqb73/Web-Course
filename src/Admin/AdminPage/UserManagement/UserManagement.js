@@ -6,7 +6,7 @@ import Button from 'react-bootstrap/Button';
 
 import { ModalDeleteUser } from '~/Admin/components/ModalsUser';
 import styles from './UserManagement.module.scss';
-import Image from '~/components/Image';
+import Image from '~/components/common/Image';
 
 //Service
 import * as userServices from '~/services/userServices';

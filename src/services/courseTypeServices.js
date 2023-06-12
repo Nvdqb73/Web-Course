@@ -1,4 +1,5 @@
 import * as httpRequest from '~/utils/httpRequest';
+
 export const courseType = async () => {
     try {
         const res = await httpRequest.get('LoaiKHs');

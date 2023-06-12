@@ -1,9 +1,17 @@
 import * as httpRequest from '~/utils/httpRequest';
+
 export const course = async () => {
     try {
-        const res = await httpRequest.get('KhoaHocs', {
-            params: {},
-        });
+        const res = await httpRequest.get('KhoaHocs');
+        return res;
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+export const courseById = async (id) => {
+    try {
+        const res = await httpRequest.get(`KhoaHocs/${id}`);
         return res;
     } catch (error) {
         console.log(error);
