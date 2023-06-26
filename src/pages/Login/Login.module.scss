@@ -149,6 +149,19 @@
     }
 }
 
+.loading {
+    animation: spinner 0.8s linear infinite;
+}
+
+@keyframes spinner {
+    from {
+        transform: translateY(0%) rotate(0);
+    }
+    to {
+        transform: translateY(0%) rotate(360deg);
+    }
+}
+
 //footer
 .footer {
     bottom: 0;

@@ -1,10 +1,23 @@
-import { Fragment } from 'react';
+import { Fragment, useLayoutEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
+import { useStore } from '~/hooks';
+import { actions } from '~/store';
 import ScrollOnTop from './components/common/ScrollOnTop';
 import { publicRoutes } from '~/routes';
 import DefaultLayout from '~/layouts';
 function App() {
+    const [state, dispatch] = useStore();
+
+    const { currentUser } = state;
+
+    useLayoutEffect(() => {
+        const token = localStorage.getItem('token');
+
+        if (token) {
+            dispatch(actions.setCurrentUser(true));
+        }
+    }, [dispatch]);
     return (
         <Router>
             <ScrollOnTop />

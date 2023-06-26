@@ -30,6 +30,8 @@ import {
     SET_ANSWER,
     SET_POINT,
     SET_LESSONCODE,
+    //Header
+    SET_CURRENUSER,
 } from './constants';
 
 const initState = {
@@ -63,11 +65,17 @@ const initState = {
     answer: '',
     point: '',
     lessonCode: '',
+    currentUser: false,
 };
 
 const reducer = (state, action) => {
     switch (action.type) {
         //Common
+        case SET_CURRENUSER: {
+            return {
+                currentUser: action.payload,
+            };
+        }
         case SET_ID: {
             return {
                 ...state,

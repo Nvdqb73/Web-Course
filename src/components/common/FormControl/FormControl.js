@@ -17,10 +17,7 @@ function FormControl({ ...props }) {
         labelComeback,
         setUserName_L,
         setPassword_L,
-        setYourName,
-        setUserName_R,
-        setEmail_R,
-        setPassword_R,
+        dispatch,
     } = props;
 
     return (
@@ -36,10 +33,7 @@ function FormControl({ ...props }) {
                 labelComeback={labelComeback}
                 setUserName_L={setUserName_L}
                 setPassword_L={setPassword_L}
-                setYourName={setYourName}
-                setUserName_R={setUserName_R}
-                setEmail_R={setEmail_R}
-                setPassword_R={setPassword_R}
+                dispatch={dispatch}
             />
         </div>
     );

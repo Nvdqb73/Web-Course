@@ -1,12 +1,18 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import classNames from 'classnames/bind';
-import { IconEyeClosed, IconEye } from '@tabler/icons-react';
+import { IconEyeClosed, IconEye, IconLoader2 } from '@tabler/icons-react';
+import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
+import { useStore } from '~/hooks';
+import { actions } from '~/store';
 import Button from '~/components/common/Button/Button';
 import Image from '~/components/common/Image/Image';
 import SigninButton from '~/components/common/SigninButton';
 import FormControl from '~/components/common/FormControl';
 import styles from './Login.module.scss';
+
+import * as userServices from '~/services/userServices';
 
 const cx = classNames.bind(styles);
 
@@ -15,8 +21,41 @@ function Login() {
     const [userName_L, setUserName_L] = useState('');
     const [password_L, setPassword_L] = useState('');
     const [isShowPassword, setIsShowPassword] = useState(false);
+    const [loading, setLoading] = useState(false);
+    const [state, dispatch] = useStore();
+    const { currentUser } = state;
+
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        const token = localStorage.getItem('token');
+
+        if (token) {
+            navigate('/');
+        }
+    }, [dispatch, navigate]);
+
+    const handleLogin = async () => {
+        if (!userName_L || !password_L) {
+            toast.error('Bạn chưa nhập tài khoản mật khẩu!');
+            return;
+        }
+        setLoading(true);
+        const result = await userServices.loginUser(userName_L, password_L);
+        if (result && result.token && result.success === true) {
+            localStorage.setItem('token', result.token);
+            dispatch(actions.setCurrentUser(true));
+            navigate('/');
+        } else if (result && result.success === false) {
+            toast.error(result.message);
+        }
+        setTimeout(() => {
+            setLoading(false);
+        }, 2000);
+    };
 
     let IconPassword = IconEyeClosed;
+
     let inputType = 'password';
     if (isShowPassword) {
         IconPassword = IconEye;
@@ -26,9 +65,6 @@ function Login() {
     const handleShowForm = () => {
         setCurrentLogin(false);
     };
-
-    console.log('userName', userName_L);
-    console.log('password', password_L);
 
     return (
         <div className={cx('wrapper', 'hasBg')}>
@@ -81,8 +117,10 @@ function Login() {
                                     <Button
                                         className={userName_L && password_L ? cx('btnSubmit') : cx('btnDisabled')}
                                         disabled={userName_L && password_L ? false : true}
+                                        onClick={() => handleLogin()}
                                     >
-                                        Đăng nhập
+                                        {loading && <IconLoader2 className={cx('loading')} size={20} />}
+                                        &nbsp;Đăng nhập
                                     </Button>
                                 </div>
                             </>

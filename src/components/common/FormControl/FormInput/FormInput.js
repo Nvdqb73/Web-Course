@@ -1,5 +1,6 @@
 import classNames from 'classnames/bind';
 
+import { actions } from '~/store';
 import styles from './FormInput.module.scss';
 
 const cx = classNames.bind(styles);
@@ -16,10 +17,7 @@ function FormInput({ ...props }) {
         labelComeback,
         setUserName_L,
         setPassword_L,
-        setYourName,
-        setUserName_R,
-        setEmail_R,
-        setPassword_R,
+        dispatch,
     } = props;
 
     const classes = cx('labelGroup', {
@@ -30,6 +28,7 @@ function FormInput({ ...props }) {
         labelComeback,
     });
 
+    
     return (
         <div className={cx('wrapper')}>
             <div className={classes}>
@@ -52,13 +51,13 @@ function FormInput({ ...props }) {
                         } else if (name === 'password_login') {
                             setPassword_L(e.target.value);
                         } else if (name === 'yourName') {
-                            setYourName(e.target.value);
+                            dispatch(actions.setName(e.target.value));
                         } else if (name === 'userName_register') {
-                            setUserName_R(e.target.value);
+                            dispatch(actions.setUserName(e.target.value));
                         } else if (name === 'email') {
-                            setEmail_R(e.target.value);
+                            dispatch(actions.setEmail(e.target.value));
                         } else if (name === 'password_R') {
-                            setPassword_R(e.target.value);
+                            dispatch(actions.setPassword(e.target.value));
                         }
                     }}
                     placeholder={placeholder}

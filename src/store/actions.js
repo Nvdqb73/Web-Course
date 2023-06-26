@@ -30,9 +30,17 @@ const {
     SET_ANSWER,
     SET_POINT,
     SET_LESSONCODE,
+    //Header
+    SET_CURRENUSER,
 } = require('./constants');
 
 //Common
+const setCurrentUser = (payload) => {
+    return {
+        type: SET_CURRENUSER,
+        payload,
+    };
+};
 
 const setId = (payload) => {
     return {
@@ -245,4 +253,6 @@ export {
     setAnswer,
     setPoint,
     setLessonCode,
+    //Header
+    setCurrentUser,
 };

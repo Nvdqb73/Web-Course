@@ -1,24 +1,45 @@
 import { useState } from 'react';
 import classNames from 'classnames/bind';
 import { IconEyeClosed, IconEye } from '@tabler/icons-react';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
+import { useStore } from '~/hooks';
+import { actions } from '~/store';
 import styles from './Register.module.scss';
 import Button from '~/components/common/Button/Button';
 import Image from '~/components/common/Image/Image';
 import SigninButton from '~/components/common/SigninButton';
 import FormControl from '~/components/common/FormControl';
 
+//Service
+import * as userServices from '~/services/userServices';
+
 const cx = classNames.bind(styles);
 
 function Register() {
+    const [state, dispatch] = useStore();
+    const navigate = useNavigate();
     const [currentLogin, setCurrentLogin] = useState(true);
-    const [yourName, setYourName] = useState('');
-    const [userName_R, setUserName_R] = useState('');
-    const [email_R, setEmail_R] = useState('');
-    const [password_R, setPassword_R] = useState('');
     const [isShowPassword, setIsShowPassword] = useState(false);
 
+    const roleId = '2';
+    const { name, image, userName, password, email } = state;
+
+    const handleSaveUser = async () => {
+        const result = await userServices.createUser(userName, password, name, email, image, roleId);
+        if (result) {
+            dispatch(actions.reset(''));
+            navigate('/login');
+            toast.success('Đăng ký thành công...!');
+        } else {
+            dispatch(actions.reset(''));
+            toast.error('Đăng ký thất bại...!');
+        }
+    };
+
     let IconPassword = IconEyeClosed;
+
     let inputType = 'password';
     if (isShowPassword) {
         IconPassword = IconEye;
@@ -29,10 +50,6 @@ function Register() {
         setCurrentLogin(false);
     };
 
-    console.log('yourName', yourName);
-    console.log('userName', userName_R);
-    console.log('email', email_R);
-    console.log('password_r', password_R);
     return (
         <div className={cx('wrapper', 'hasBg')}>
             <div className={cx('container')}>
@@ -57,38 +74,42 @@ function Register() {
                             <>
                                 <div className={cx('formBody')}>
                                     <FormControl
+                                        value={name}
                                         labelTitle="Tên của bản"
                                         placeholder="Họ và tên của bạn"
                                         name="yourName"
                                         type="text"
                                         labelComeback
-                                        setYourName={setYourName}
+                                        dispatch={dispatch}
                                     />
 
                                     <FormControl
+                                        value={userName}
                                         labelComeback
                                         labelTitle="Tên đăng nhâp"
                                         placeholder="Tên đăng nhập"
                                         name="userName_register"
                                         type="text"
-                                        setUserName_R={setUserName_R}
+                                        dispatch={dispatch}
                                     />
 
                                     <FormControl
+                                        value={email}
                                         labelTitle="Email"
                                         placeholder="Địa chỉ email"
                                         name="email"
                                         type="text"
                                         setCurrentLogin={setCurrentLogin}
-                                        setEmail_R={setEmail_R}
+                                        dispatch={dispatch}
                                     />
                                     <div className={cx('inputPassword')}>
                                         <FormControl
+                                            value={password}
                                             labelStyle
                                             placeholder="Mật khẩu"
                                             name="password_R"
                                             type={inputType}
-                                            setPassword_R={setPassword_R}
+                                            dispatch={dispatch}
                                         />
 
                                         <IconPassword
@@ -100,11 +121,10 @@ function Register() {
 
                                     <Button
                                         className={
-                                            yourName && userName_R && email_R && password_R
-                                                ? cx('btnSubmit')
-                                                : cx('btnDisabled')
+                                            name && userName && email && password ? cx('btnSubmit') : cx('btnDisabled')
                                         }
-                                        disabled={yourName && userName_R && email_R && password_R ? false : true}
+                                        disabled={name && userName && email && password ? false : true}
+                                        onClick={() => handleSaveUser()}
                                     >
                                         Đăng ký
                                     </Button>

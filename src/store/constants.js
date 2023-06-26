@@ -33,6 +33,9 @@ const SET_ANSWER = 'set_answer';
 const SET_POINT = 'set_point';
 const SET_LESSONCODE = 'set_lessoncode';
 
+//Header
+const SET_CURRENUSER = 'set_currenuser';
+
 export {
     //Common
     SET_ID,
@@ -65,4 +68,6 @@ export {
     SET_ANSWER,
     SET_POINT,
     SET_LESSONCODE,
+    //Header
+    SET_CURRENUSER,
 };

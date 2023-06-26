@@ -6,6 +6,7 @@ import { IconBat, IconBellFilled } from '@tabler/icons-react';
 import { IconUser, IconSettings, IconArrowBarRight } from '@tabler/icons-react';
 import 'tippy.js/dist/tippy.css';
 
+import { useStore } from '~/hooks';
 import config from '~/config';
 import Button from '~/components/common/Button';
 import styles from './Header.module.scss';
@@ -16,7 +17,8 @@ import Search from '../Search';
 const cx = classNames.bind(styles);
 
 function Header() {
-    const currentUser = false;
+    const [state] = useStore();
+    const { currentUser } = state;
 
     const userMenu = [
         {
@@ -32,7 +34,7 @@ function Header() {
         {
             icon: <IconArrowBarRight size={15} color="#333" stroke={2} />,
             title: 'Đăng Xuất',
-            to: './huhu',
+            onclick,
             separate: true,
         },
     ];
@@ -82,4 +84,5 @@ function Header() {
         </header>
     );
 }
+
 export default Header;

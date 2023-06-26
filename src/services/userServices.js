@@ -49,3 +49,16 @@ export const deleteUser = async (id) => {
         console.log(error);
     }
 };
+
+export const loginUser = async (userName_L, password_L) => {
+    try {
+        const res = await httpRequest.post('NguoiDungs/Login', {
+            tenDangNhap: userName_L,
+            password: password_L,
+        });
+
+        return res;
+    } catch (error) {
+        console.log(error);
+    }
+};
