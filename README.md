@@ -17,13 +17,13 @@
 The site will primarily focus on showcasing the courses, allowing users to search for a specific course and view the content of the lessons.
 
 
-##Installation
+## Installation
 ### Step 1: [Clone project](https://github.com/Nvdqb73/Web-Course.git)
 ### Step 2: [Clone project](https://github.com/Nvdqb73/Web-Course-BE.git)
 ### Step 3: Install Environment
 1. [Node js](https://nodejs.org/dist/v10.16.3/node-v10.16.3-x64.msi).
-### Step 4 - Edit content 
-![Open file](https://github.com/Nvdqb73/Web-Course/assets/88336997/c130e9f6-71b3-41fb-9bed-f9bba66b1075)
+### Step 4 - Edit content  
+![Open file](https://github.com/Nvdqb73/Web-Course/assets/88336997/47971d4a-293f-4ae6-a5c9-c770052ed9d2)
 
 2. Run `npm install `
    
@@ -34,7 +34,7 @@ The site will primarily focus on showcasing the courses, allowing users to searc
 - At the BE directory path: Run `npm start`
 
 ## **Feature**
--  Login / Sign out
+-   Login / Sign out
 -   Search course
 -   Watch availble course
 -   Manager Admin
